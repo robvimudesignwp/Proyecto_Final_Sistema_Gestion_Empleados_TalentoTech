@@ -90,3 +90,9 @@ class Area:
           jefe_str = self.obtener_jefe_area()
           return f"Área: {self.__nombre}, Descripción: {self.__descripcion}\nJefe de Área: {jefe_str}, Empleados: {empleados_str}\n"
 
+## Insertando datos de empleados 
+empleado_01 = Empleado("Jhon", "Martinez", 37, 1387990, "10543765", "2021-03-18")
+empleado_02 = Empleado("Lorena", "Penagos", 26, 1879650, "67054098", "2018-09-14")
+empleado_03 = Empleado("Pablo", "Londra", 32, 2570870, "1130765498", "2016-05-19")
+empleado_04 = Empleado("Sandra", "Giraldo", 25, 1870950, "87654324", "2014-08-30")
+
