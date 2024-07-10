@@ -13,10 +13,10 @@ class Empleado:
         return f"{self.__nombre} {self.__apellido}"
     
     
-   def get_sueldo(self):
+   def obtener_sueldo(self):
        return f"Empleado: {self.nombre_completo}, Cédula: {self.__nro_identidad}, Salario: {self.__salario}\n"
    
-   def get_datos_empleado(self):
+   def obtener_datos_empleado(self):
        return (f"Nombre: {self.nombre_completo()}, Edad: {self.__edad}, Salario: {self.__salario}"
                f"Cédula: {self.__nro_identidad}, Fecha Vinculación: {self.__fecha_vinculacion.strftime('%Y-%m-%d')}\n")
   
@@ -125,3 +125,20 @@ area_02.insertar_empleado(Jefe)
 area_02.insertar_empleado(empleado_03)
 area_02.insertar_empleado(empleado_04)
 area_02.designar_jefe(Jefe)
+
+## Obteniendo información de empleados, sueldos, jefes y áreas
+print(empleado_01.obtener_informacion_empleados())
+print(empleado_02.obtener_informacion_empleados())
+print(empleado_03.obtener_informacion_empleados())
+print(empleado_04.obtener_informacion_empleados())
+
+print(empleado_01.obtener_sueldo())
+print(empleado_02.obtener_sueldo())
+print(empleado_07.obtener_sueldo())
+print(empleado_08.obtener_sueldo())
+print(Jefe.obtener_informacion_empleados())
+print(Area.obtener_informacion())
+
+print(empleado_01.obtener_sueldo)
+print(empleado_02.obtener_sueldo)
+print(Jefe.obtener_sueldo())
