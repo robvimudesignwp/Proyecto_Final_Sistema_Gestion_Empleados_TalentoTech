@@ -61,7 +61,7 @@ class Area:
      def insertar_empleado(self, empleado):
           for trabajador in self.empleados:
                if trabajador == empleado:
-                    print(f"Empleado {empleado.nombre_completo()} ya está insertado en el área {self.__nombre}.\n")
+                    print(f"Empleado {empleado.nombre_completo()} ya está agregado en el área {self.__nombre}.\n")
                     return
                self.empleados.append(empleado)
                print(f"Empleado {empleado.nombre_completo()} insertado en el área {self.__nombre}.\n")
@@ -112,3 +112,16 @@ jefe_02.insertar_empleado(empleado_05)
 jefe_02.insertar_empleado(empleado_06)
 jefe_02.insertar_empleado(empleado_07)
 jefe_02.insertar_empleado(empleado_08)
+
+## Insertando datos de algunas áreas
+area_01 = Area("Área de Marketing", "Esta área es la encargada de investigar al mercado objetivo del negocio, realizar estrategias de comunicación y publicidad en diversos canales y formatos y, de esta manera, potenciar la imagen positiva de la compañía")
+area_01.insertar_empleado(Jefe)
+area_01.insertar_empleado(empleado_01)
+area_01.insertar_empleado(empleado_02)
+area_01.designar_jefe(Jefe)
+
+area_02 = Area("Investigación y Desarrollo", "Esta área es la encargada de realizar investigaciones sobre nuevos productos y servicios que la empresa puede ofrecer a su mercado objetivo.")
+area_02.insertar_empleado(Jefe)
+area_02.insertar_empleado(empleado_03)
+area_02.insertar_empleado(empleado_04)
+area_02.designar_jefe(Jefe)
