@@ -95,4 +95,20 @@ empleado_01 = Empleado("Jhon", "Martinez", 37, 1387990, "10543765", "2021-03-18"
 empleado_02 = Empleado("Lorena", "Penagos", 26, 1879650, "67054098", "2018-09-14")
 empleado_03 = Empleado("Pablo", "Londra", 32, 2570870, "1130765498", "2016-05-19")
 empleado_04 = Empleado("Sandra", "Giraldo", 25, 1870950, "87654324", "2014-08-30")
+empleado_05 = Empleado("Chistian", "Palacios", 28, 2570860, "1130765876", "2016-07-15")
+empleado_06 = Empleado("Aura", "Mosquera", 29, 1570870, "34567092", "2015-05-16")
+empleado_07 = Empleado("Carlos", "Salazar", 38, 3270650, "8769735", "2019-04-15")
+empleado_08 = Empleado("Alejandra", "Balanta", 23, 1650890, "1140654328", "2018-09-30")
 
+## Insertando datos de algunos jefes
+jefe_01 = Jefe("Mauricio", "Castro", 49, 6570860, "12765439", "2008-03-15")
+jefe_01.insertar_empleado(empleado_01)
+jefe_01.insertar_empleado(empleado_02)
+jefe_01.insertar_empleado(empleado_03)
+jefe_01.insertar_empleado(empleado_04)
+
+jefe_02 = Jefe("Francisco", "Gil", 53, 6570980, "67543879", "2009-05-15")
+jefe_02.insertar_empleado(empleado_05)
+jefe_02.insertar_empleado(empleado_06)
+jefe_02.insertar_empleado(empleado_07)
+jefe_02.insertar_empleado(empleado_08)
