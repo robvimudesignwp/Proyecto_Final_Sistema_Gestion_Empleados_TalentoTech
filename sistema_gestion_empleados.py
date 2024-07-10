@@ -142,3 +142,7 @@ print(Area.obtener_informacion())
 print(empleado_01.obtener_sueldo)
 print(empleado_02.obtener_sueldo)
 print(Jefe.obtener_sueldo())
+
+## Eliminando empleados
+Area.suprimir_empleado(empleado_01)
+Jefe.suprimir_empleado(empleado_05)
