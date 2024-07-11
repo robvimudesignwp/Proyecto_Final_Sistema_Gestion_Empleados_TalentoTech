@@ -1,0 +1,1 @@
+En este proyecto final, se aplican los conceptos de Programación Orientada a Objetos (POO) aprendidos durante el Bootcamp TalentoTech nivel explorador utilizando Python para crear un sistema de gestión de empleados de una empresa. Este sistema permitirá administrar la información de los empleados, áreas y jefes.
