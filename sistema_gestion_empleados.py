@@ -10,11 +10,11 @@ class Empleado:
         self.__fecha_vinculacion = datetime.strptime(fecha_vinculacion, '%Y-%m-%d')
     
    def nombre_completo(self):
-        return f"{self.__nombre} {self.__apellido}"
+        return (f"{self.__nombre} {self.__apellido}")
     
     
    def obtener_sueldo(self):
-       return f"Empleado: {self.nombre_completo}, Cédula: {self.__nro_identidad}, Salario: {self.__salario}\n"
+       return (f"Empleado: {self.nombre_completo()}, Cédula: {self.__nro_identidad}, Salario: {self.__salario}\n")
    
    def obtener_datos_empleado(self):
        return (f"Nombre: {self.nombre_completo()}, Edad: {self.__edad}, Salario: {self.__salario}"
@@ -32,7 +32,7 @@ class Jefe(Empleado):
                     print(f"Empleado {empleado.nombre_completo()} ya está al mando del Jefe {self.nombre_completo()}.\n")
                     return
           self.empleados_al_mando.append(empleado)
-          print(f"Empleado {empleado.nombre_completo()} añadido bajo el cargodel Jefe {self.nombre_completo()}.\n")
+          print(f"Empleado {empleado.nombre_completo()} añadido bajo el cargo del Jefe {self.nombre_completo()}.\n")
           
      def suprimir_empleado(self, nro_identidad):
           for trabajador in self.empleados_al_mando:
@@ -45,9 +45,9 @@ class Jefe(Empleado):
      def obtener_empleados_al_mando(self):
           return [empleado.nombre_completo() for empleado in self.empleados_al_mando]
      
-     def obtener_informacion_empleados(self):
+     def obtener_informacion(self):
           empleados_str = ",".join(self.obtener_empleados_al_mando()) or "Ninguno"
-          return super().obtener_informacion_empleados() + f"\nEmpleados al mando: {empleados_str}\n"
+          return super().obtener_datos_empleado() + f"\nEmpleados al mando: {empleados_str}\n"
      
 ## Creando la clase Area
 
@@ -88,7 +88,7 @@ class Area:
      def obtener_informacion(self):
           empleados_str = ", ".join(self.obtener_empleados()) or "Ninguno\n"
           jefe_str = self.obtener_jefe_area()
-          return f"Área: {self.__nombre}, Descripción: {self.__descripcion}\nJefe de Área: {jefe_str}, Empleados: {empleados_str}\n"
+          return (f"Área: {self.__nombre}, Descripción: {self.__descripcion}\nJefe de Área: {jefe_str}, Empleados: {empleados_str}\n")
 
 ## Insertando datos de empleados 
 empleado_01 = Empleado("Jhon", "Martinez", 37, 1387990, "10543765", "2021-03-18")
@@ -115,34 +115,35 @@ jefe_02.insertar_empleado(empleado_08)
 
 ## Insertando datos de algunas áreas
 area_01 = Area("Área de Marketing", "Esta área es la encargada de investigar al mercado objetivo del negocio, realizar estrategias de comunicación y publicidad en diversos canales y formatos y, de esta manera, potenciar la imagen positiva de la compañía")
-area_01.insertar_empleado(Jefe)
-area_01.insertar_empleado(empleado_01)
-area_01.insertar_empleado(empleado_02)
-area_01.designar_jefe(Jefe)
+area_01.insertar_empleado(jefe_01)
+area_01.insertar_empleado(empleado_03)
+area_01.insertar_empleado(empleado_05)
+area_01.designar_jefe(jefe_01)
 
 area_02 = Area("Investigación y Desarrollo", "Esta área es la encargada de realizar investigaciones sobre nuevos productos y servicios que la empresa puede ofrecer a su mercado objetivo.")
-area_02.insertar_empleado(Jefe)
-area_02.insertar_empleado(empleado_03)
-area_02.insertar_empleado(empleado_04)
-area_02.designar_jefe(Jefe)
+area_02.insertar_empleado(jefe_02)
+area_02.insertar_empleado(empleado_05)
+area_02.insertar_empleado(empleado_07)
+area_02.designar_jefe(jefe_02)
 
 ## Obteniendo información de empleados, sueldos, jefes y áreas
-print(empleado_01.obtener_informacion_empleados())
-print(empleado_02.obtener_informacion_empleados())
-print(empleado_03.obtener_informacion_empleados())
-print(empleado_04.obtener_informacion_empleados())
+print(empleado_01.obtener_datos_empleado())
+print(empleado_02.obtener_datos_empleado())
+print(empleado_03.obtener_datos_empleado())
+print(empleado_04.obtener_datos_empleado())
 
 print(empleado_01.obtener_sueldo())
 print(empleado_02.obtener_sueldo())
 print(empleado_07.obtener_sueldo())
 print(empleado_08.obtener_sueldo())
-print(Jefe.obtener_informacion_empleados())
-print(Area.obtener_informacion())
+print(jefe_01.obtener_informacion())
+print(area_01.obtener_informacion())
 
-print(empleado_01.obtener_sueldo)
-print(empleado_02.obtener_sueldo)
-print(Jefe.obtener_sueldo())
+print(empleado_04.obtener_sueldo)
+print(empleado_05.obtener_sueldo)
+print(jefe_02.obtener_sueldo())
+print(area_02.obtener_informacion())
 
 ## Eliminando empleados
-Area.suprimir_empleado(empleado_01)
-Jefe.suprimir_empleado(empleado_05)
+area_01.suprimir_empleado(empleado_01)
+jefe_01.suprimir_empleado(empleado_05)
